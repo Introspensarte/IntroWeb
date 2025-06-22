@@ -1,3 +1,4 @@
+// ... (mantén todos tus imports originales)
 import { 
   users, 
   activities, 
@@ -29,16 +30,18 @@ export interface IStorage {
   getUserBySignature(signature: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
   updateUser(id: number, updates: Partial<User>): Promise<User | undefined>;
-  
+  updateUserRole(id: number, role: string): Promise<User | undefined>;
+  updateUserTrazos(id: number, trazos: number): Promise<User | undefined>;
+
   // Activity methods
   createActivity(activity: InsertActivity & { userId: number; trazos: number }): Promise<Activity>;
   getUserActivities(userId: number, limit?: number): Promise<Activity[]>;
   updateUserStats(userId: number): Promise<void>;
-  
+
   // Rankings
   getUsersByTrazos(limit?: number): Promise<User[]>;
   getUsersByWords(limit?: number): Promise<User[]>;
-  
+
   // Content methods
   getNews(limit?: number): Promise<News[]>;
   createNews(news: InsertNews & { authorId: number }): Promise<News>;
@@ -46,7 +49,7 @@ export interface IStorage {
   createAnnouncement(announcement: InsertAnnouncement & { authorId: number }): Promise<Announcement>;
   getActivitiesToDo(limit?: number): Promise<ActivityToDo[]>;
   createActivityToDo(activityToDo: InsertActivityToDo & { authorId: number }): Promise<ActivityToDo>;
-  
+
   sessionStore: session.SessionStore;
 }
 
@@ -75,7 +78,6 @@ export class DatabaseStorage implements IStorage {
       .insert(users)
       .values({
         ...insertUser,
-        // Set admin role if signature is #INELUDIBLE  
         role: insertUser.signature === '#INELUDIBLE' ? 'admin' : 'user'
       })
       .returning();
@@ -91,13 +93,32 @@ export class DatabaseStorage implements IStorage {
     return user || undefined;
   }
 
+  // ✅ Cambiar rol del usuario
+  async updateUserRole(id: number, role: string): Promise<User | undefined> {
+    const [user] = await db
+      .update(users)
+      .set({ role })
+      .where(eq(users.id, id))
+      .returning();
+    return user || undefined;
+  }
+
+  // ✅ Cambiar trazos manualmente
+  async updateUserTrazos(id: number, trazos: number): Promise<User | undefined> {
+    const [user] = await db
+      .update(users)
+      .set({ totalTrazos: trazos })
+      .where(eq(users.id, id))
+      .returning();
+    return user || undefined;
+  }
+
   async createActivity(activityData: InsertActivity & { userId: number; trazos: number }): Promise<Activity> {
     const [activity] = await db
       .insert(activities)
       .values(activityData)
       .returning();
     
-    // Update user stats
     await this.updateUserStats(activityData.userId);
     
     return activity;
