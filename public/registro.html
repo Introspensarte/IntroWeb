@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - IntrospensArte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="min-h-screen bg-black py-12">
+        <div class="max-w-2xl mx-auto px-6">
+            <!-- Back button -->
+            <div class="text-center mb-8">
+                <a href="/" class="btn btn-secondary mb-6" style="min-width: auto; padding: 0.5rem 1rem;">
+                    <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    Volver
+                </a>
+                <h1 class="page-title">Registro</h1>
+                <p class="text-gray mb-8">Únete a nuestra comunidad artística</p>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="form-container fade-in">
+                <form id="registerForm" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="form-group">
+                            <label class="form-label">Nombre y Apellido *</label>
+                            <input type="text" name="fullName" class="form-input" placeholder="Tu nombre completo" required>
+                            <div class="form-error" id="fullName-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Edad *</label>
+                            <input type="number" name="age" class="form-input" placeholder="Tu edad" min="13" max="100" required>
+                            <div class="form-error" id="age-error"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="form-group">
+                            <label class="form-label">Cumpleaños (dd/mm) *</label>
+                            <input type="text" name="birthday" class="form-input" placeholder="15/06" pattern="\d{2}/\d{2}" required>
+                            <div class="form-error" id="birthday-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Face Claim *</label>
+                            <input type="text" name="faceClaim" class="form-input" placeholder="Tu face claim" required>
+                            <div class="form-error" id="faceClaim-error"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Firma (con # al inicio) *</label>
+                        <input type="text" name="signature" class="form-input" placeholder="#TuFirmaUnica" required>
+                        <div class="form-error" id="signature-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Link de Facebook *</label>
+                        <input type="url" name="facebookLink" class="form-input" placeholder="https://facebook.com/tu-perfil" required>
+                        <div class="form-error" id="facebookLink-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">¿Por qué desea ingresar al proyecto? *</label>
+                        <textarea name="motivation" class="form-textarea" placeholder="Comparte tu motivación para unirte..." required></textarea>
+                        <div class="form-error" id="motivation-error"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary glow-effect w-full" id="submitBtn">
+                        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
+                        </svg>
+                        <span id="submitText">Enviar Registro</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Loading overlay -->
+    <div id="loadingOverlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" style="display: none;">
+        <div class="loading-spinner"></div>
+    </div>
+    
+    <script src="/js/auth.js"></script>
+</body>
+</html>

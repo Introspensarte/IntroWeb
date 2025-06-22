@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal - IntrospensArte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/portal.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-brand">IntrospensArte</a>
+            
+            <!-- Desktop Navigation -->
+            <div class="navbar-nav">
+                <a href="#" class="navbar-link" data-tab="profile">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
+                    Mi Perfil
+                </a>
+                <a href="#" class="navbar-link" data-tab="news">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
+                    </svg>
+                    Noticias
+                </a>
+                <a href="#" class="navbar-link" data-tab="announcements">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5v-5zM4 19l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M4 7l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"/>
+                    </svg>
+                    Avisos
+                </a>
+                <a href="#" class="navbar-link" data-tab="activities">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    Actividades
+                </a>
+                <a href="#" class="navbar-link" data-tab="upload">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                    </svg>
+                    Subir
+                </a>
+                <a href="#" class="navbar-link" data-tab="rankings">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                    </svg>
+                    Rankings
+                </a>
+                <a href="#" class="navbar-link" data-tab="notifications">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5v-5zM4 19l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"/>
+                    </svg>
+                    Notificaciones
+                </a>
+                <button class="navbar-link" id="logoutBtn">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <h3 class="text-lavender font-serif text-xl">IntrospensArte</h3>
+            <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
+        </div>
+        <a href="#" class="mobile-nav-link" data-tab="profile">Mi Perfil</a>
+        <a href="#" class="mobile-nav-link" data-tab="news">Noticias</a>
+        <a href="#" class="mobile-nav-link" data-tab="announcements">Avisos</a>
+        <a href="#" class="mobile-nav-link" data-tab="activities">Actividades</a>
+        <a href="#" class="mobile-nav-link" data-tab="upload">Subir</a>
+        <a href="#" class="mobile-nav-link" data-tab="rankings">Rankings</a>
+        <a href="#" class="mobile-nav-link" data-tab="notifications">Notificaciones</a>
+        <button class="mobile-nav-link" id="mobileLogoutBtn">Cerrar Sesión</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Profile Section -->
+        <div id="profile-section" class="tab-content active">
+            <div class="profile-container">
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                        </svg>
+                    </div>
+                    <div class="profile-info">
+                        <h3 id="userName" class="profile-name">Cargando...</h3>
+                        <p id="userSignature" class="profile-signature"></p>
+                        <div class="profile-meta">
+                            <span id="userBirthday"></span>
+                            <span id="userAge"></span>
+                        </div>
+                    </div>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Trazos Totales</span>
+                            <span id="userTrazos" class="stat-value text-pale-gold">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Palabras Totales</span>
+                            <span id="userWords" class="stat-value text-lavender">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Actividades</span>
+                            <span id="userActivities" class="stat-value">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Miembro desde</span>
+                            <span id="userJoinDate" class="stat-value text-gray"></span>
+                        </div>
+                    </div>
+                    <div class="rank-badge">
+                        <h4 id="userRank" class="rank-title">Alma en tránsito</h4>
+                        <p id="userMedal" class="rank-medal"></p>
+                    </div>
+                </div>
+                
+                <div class="activities-card">
+                    <div class="card-header">
+                        <h3 class="section-title">Actividades Recientes</h3>
+                    </div>
+                    <div id="recentActivities" class="activities-list">
+                        <div class="loading-spinner mx-auto"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upload Section -->
+        <div id="upload-section" class="tab-content">
+            <div class="upload-container">
+                <h2 class="page-title">Sube tu Actividad</h2>
+                <div class="form-container">
+                    <form id="uploadForm">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="form-group">
+                                <label class="form-label">Nombre de la Actividad *</label>
+                                <input type="text" name="name" class="form-input" placeholder="Título de tu obra" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Fecha *</label>
+                                <input type="date" name="date" class="form-input" required>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="form-group">
+                                <label class="form-label">Palabras *</label>
+                                <input type="number" name="words" class="form-input" placeholder="0" min="0" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Tipo *</label>
+                                <select name="type" class="form-select" required>
+                                    <option value="narrativa">Narrativa</option>
+                                    <option value="microcuento">Microcuento</option>
+                                    <option value="drabble">Drabble</option>
+                                    <option value="hilo">Hilo</option>
+                                    <option value="rol">Rol</option>
+                                    <option value="encuesta">Encuesta</option>
+                                    <option value="collage">Collage</option>
+                                    <option value="poemas">Poemas</option>
+                                    <option value="pinturas">Pinturas</option>
+                                    <option value="interpretacion">Interpretación</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Respuestas</label>
+                                <input type="number" name="responses" class="form-input" placeholder="0" min="0">
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="form-group">
+                                <label class="form-label">Arista *</label>
+                                <select name="arista" class="form-select" required>
+                                    <option value="inventario_de_la_vida">Inventario de la Vida</option>
+                                    <option value="mapa_del_inconsciente">Mapa del Inconsciente</option>
+                                    <option value="ecos_del_corazon">Ecos del Corazón</option>
+                                    <option value="reflejos_en_el_tiempo">Reflejos en el Tiempo</option>
+                                    <option value="galeria_del_alma">Galería del Alma</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Álbum *</label>
+                                <select name="album" class="form-select" required>
+                                    <option value="">Selecciona un arista primero</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Link</label>
+                            <input type="url" name="link" class="form-input" placeholder="https://...">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Descripción breve</label>
+                            <textarea name="description" class="form-textarea" placeholder="Describe tu actividad..."></textarea>
+                        </div>
+                        
+                        <div class="trazos-preview">
+                            <div class="trazos-display">
+                                <span class="trazos-label">Trazos calculados:</span>
+                                <span id="calculatedTrazos" class="trazos-value">0</span>
+                            </div>
+                            <button type="button" id="calculateBtn" class="btn btn-secondary">Calcular Trazos</button>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary glow-effect w-full">
+                            <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                            </svg>
+                            Subir Actividad
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rankings Section -->
+        <div id="rankings-section" class="tab-content">
+            <div class="rankings-container">
+                <h2 class="page-title">Rankings Globales</h2>
+                
+                <div class="rankings-tabs">
+                    <button class="ranking-tab active" data-ranking="trazos">
+                        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                        </svg>
+                        Ranking de Trazos
+                    </button>
+                    <button class="ranking-tab" data-ranking="words">
+                        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                        Ranking de Palabras
+                    </button>
+                </div>
+                
+                <div id="trazosRanking" class="ranking-list active">
+                    <div class="loading-spinner mx-auto"></div>
+                </div>
+                
+                <div id="wordsRanking" class="ranking-list">
+                    <div class="loading-spinner mx-auto"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- News Section -->
+        <div id="news-section" class="tab-content">
+            <div class="content-container">
+                <h2 class="page-title">Noticias</h2>
+                <div id="newsList" class="content-list">
+                    <div class="loading-spinner mx-auto"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Announcements Section -->
+        <div id="announcements-section" class="tab-content">
+            <div class="content-container">
+                <h2 class="page-title">Avisos</h2>
+                <div id="announcementsList" class="content-list">
+                    <div class="loading-spinner mx-auto"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Activities Section -->
+        <div id="activities-section" class="tab-content">
+            <div class="content-container">
+                <h2 class="page-title">Actividades por Realizar</h2>
+                <div id="activitiesToDoList" class="content-list">
+                    <div class="loading-spinner mx-auto"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notifications Section -->
+        <div id="notifications-section" class="tab-content">
+            <div class="content-container">
+                <h2 class="page-title">Notificaciones</h2>
+                <div class="notifications-list">
+                    <div class="notification-item">
+                        <div class="notification-icon">🔔</div>
+                        <div class="notification-content">
+                            <h4>Bienvenido a IntrospensArte</h4>
+                            <p>¡Tu cuenta ha sido creada exitosamente! Explora todas las funciones disponibles.</p>
+                            <span class="notification-time">Hace 1 hora</span>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notification-icon">📝</div>
+                        <div class="notification-content">
+                            <h4>Nueva actividad disponible</h4>
+                            <p>Se ha añadido una nueva actividad en la sección "Ecos del Corazón".</p>
+                            <span class="notification-time">Hace 2 horas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Modal -->
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalUserName">Perfil de Usuario</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="modalProfileContent">
+                    <div class="loading-spinner mx-auto"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading overlay -->
+    <div id="loadingOverlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" style="display: none;">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <script src="/js/portal.js"></script>
+</body>
+</html>

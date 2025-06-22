@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - IntrospensArte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="min-h-screen bg-black flex items-center justify-center relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="bg-lavender blob blob-1"></div>
+            <div class="bg-pale-gold blob blob-2"></div>
+        </div>
+        
+        <div class="max-w-md mx-auto px-6 z-10">
+            <!-- Back button -->
+            <div class="text-center mb-8">
+                <a href="/" class="btn btn-secondary mb-6" style="min-width: auto; padding: 0.5rem 1rem;">
+                    <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    Volver
+                </a>
+                <h1 class="page-title">Iniciar Sesión</h1>
+                <p class="text-gray mb-8">Accede con tu firma única</p>
+            </div>
+
+            <!-- Login Form -->
+            <div class="form-container fade-in">
+                <form id="loginForm" class="space-y-6">
+                    <div class="form-group">
+                        <label class="form-label">Tu Firma</label>
+                        <input type="text" name="signature" class="form-input" placeholder="#TuFirma" style="text-align: center; font-size: 1.25rem;" required>
+                        <div class="form-error" id="signature-error"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary glow-effect w-full" id="submitBtn">
+                        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
+                        </svg>
+                        <span id="submitText">Acceder</span>
+                    </button>
+                </form>
+                
+                <div class="text-center mt-6">
+                    <p class="text-gray">¿No tienes cuenta?</p>
+                    <a href="/registro.html" class="text-lavender hover:text-white transition-colors">Registrarse aquí</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Loading overlay -->
+    <div id="loadingOverlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" style="display: none;">
+        <div class="loading-spinner"></div>
+    </div>
+    
+    <script src="/js/auth.js"></script>
+</body>
+</html>
